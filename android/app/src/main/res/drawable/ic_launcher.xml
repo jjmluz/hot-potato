@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A batata do jogo sobre um círculo âmbar -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <path android:fillColor="#6E3900" android:pathData="M100,8a92,92 0 1,0 0.01,0z" />
+    <group android:translateX="10" android:translateY="22" android:scaleX="0.9" android:scaleY="0.9">
+        <path android:fillColor="#C98E52" android:pathData="M24 92C18 60 48 38 92 36c30-1 44-14 70-6 26 8 34 38 26 62-9 28-40 44-82 46-40 2-76-14-82-46z" />
+        <path android:fillColor="#A86F3A" android:pathData="M188 92c-9 28-40 44-82 46-40 2-76-14-82-46 12 22 44 34 82 32 38-2 68-12 82-32z" />
+        <path android:strokeColor="#E7B57E" android:strokeWidth="9" android:strokeLineCap="round" android:pathData="M50 64c14-12 34-17 56-17" />
+        <path android:fillColor="#8E5A2C" android:pathData="M60,90a6,4 0 1,0 12,0a6,4 0 1,0 -12,0z" />
+        <path android:fillColor="#8E5A2C" android:pathData="M123,58a5,3.5 0 1,0 10,0a5,3.5 0 1,0 -10,0z" />
+        <path android:fillColor="#8E5A2C" android:pathData="M150,96a6,4 0 1,0 12,0a6,4 0 1,0 -12,0z" />
+        <path android:fillColor="#8E5A2C" android:pathData="M100,112a4,3 0 1,0 8,0a4,3 0 1,0 -8,0z" />
+    </group>
+</vector>

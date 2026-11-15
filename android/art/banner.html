@@ -1,0 +1,57 @@
+<!doctype html>
+<!-- Fonte do banner do Google TV, em inglês ou, com ?pt, em português. Gerar com: android/art/make-banner.sh -->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: 'Google Sans Flex'; font-weight: 400 800; src: url(google-sans-flex.woff2) format('woff2'); }
+  html, body { margin: 0; width: 320px; height: 180px; overflow: hidden; }
+  body {
+    background: #18120e;
+    font-family: 'Google Sans Flex', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 0 22px;
+    box-sizing: border-box;
+  }
+  .shape { width: 112px; height: 112px; flex: none; position: relative; display: grid; place-items: center; }
+  .shape svg.cookie { position: absolute; inset: 0; }
+  .potato { position: relative; width: 84px; height: 72px; }
+  .over { color: #ffb77c; font-size: 11px; font-weight: 600; margin-bottom: 4px; letter-spacing: .3px; }
+  h1 { margin: 0; color: #efe0d8; font-size: 40px; line-height: .92; font-weight: 750; letter-spacing: -1px; }
+</style>
+</head>
+<body>
+  <div class="shape">
+    <svg class="cookie" viewBox="0 0 200 200"><path id="cookie" fill="#6e3900"/></svg>
+    <svg class="potato" viewBox="0 0 200 170">
+      <path d="M24 92C18 60 48 38 92 36c30-1 44-14 70-6 26 8 34 38 26 62-9 28-40 44-82 46-40 2-76-14-82-46z" fill="#C98E52"/>
+      <path d="M188 92c-9 28-40 44-82 46-40 2-76-14-82-46 12 22 44 34 82 32 38-2 68-12 82-32z" fill="#A86F3A"/>
+      <path d="M50 64c14-12 34-17 56-17" stroke="#E7B57E" stroke-width="9" stroke-linecap="round" fill="none"/>
+      <ellipse cx="66" cy="90" rx="6" ry="4" fill="#8E5A2C"/>
+      <ellipse cx="128" cy="58" rx="5" ry="3.5" fill="#8E5A2C"/>
+      <ellipse cx="156" cy="96" rx="6" ry="4" fill="#8E5A2C"/>
+      <ellipse cx="104" cy="112" rx="4" ry="3" fill="#8E5A2C"/>
+    </svg>
+  </div>
+  <div>
+    <div class="over" id="over">Trivia</div>
+    <h1 id="title">Hot<br>Potato</h1>
+  </div>
+  <script>
+    if (location.search === '?pt') {
+      document.getElementById('over').textContent = 'Cultura geral';
+      document.getElementById('title').innerHTML = 'Batata<br>Quente';
+      document.documentElement.lang = 'pt-PT';
+    }
+    // Mesma forma "cookie" do jogo
+    const pts = [];
+    for (let i = 0; i <= 180; i++) {
+      const a = (i / 180) * Math.PI * 2, r = 88 + 7 * Math.cos(9 * a);
+      pts.push(`${100 + r * Math.cos(a)},${100 + r * Math.sin(a)}`);
+    }
+    document.getElementById('cookie').setAttribute('d', 'M' + pts.join('L') + 'Z');
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Textos em português de Portugal, usados quando a língua do sistema é português. -->
+<resources>
+    <string name="app_name">Batata Quente</string>
+    <string name="questions_dir">pt</string>
+
+    <string name="brand_title">Batata\nQuente</string>
+    <string name="brand_tagline">Jogo de cultura geral</string>
+    <string name="intro">Acerta na resposta para passares a batata. Se ela rebentar nas tuas mãos, perdes uma vida.</string>
+    <string name="players">Jogadores</string>
+    <string name="players_hint">Passam o comando à vez</string>
+    <string name="lives">Vidas</string>
+    <string name="lives_hint">Por jogador</string>
+    <string name="start">Começar</string>
+    <string name="hint_choose">escolher</string>
+    <string name="hint_change">alterar / avatar</string>
+    <string name="hint_name">editar nome</string>
+    <string name="kids">Perguntas infantis</string>
+    <string name="kids_hint">Mais fáceis, para todos</string>
+    <string name="player_n">Jogador %1$d</string>
+
+    <string name="holder">A batata está com</string>
+    <string name="correct">Certo! Passa a batata a %1$s</string>
+    <string name="wrong">Errado. A batata continua contigo</string>
+
+    <string name="exploded">A batata rebentou!</string>
+    <string name="eliminated">%1$s ficou sem vidas e foi eliminado.</string>
+    <plurals name="lost_life">
+        <item quantity="one">%1$s perdeu uma vida. Resta %2$d.</item>
+        <item quantity="many">%1$s perdeu uma vida. Restam %2$d.</item>
+        <item quantity="other">%1$s perdeu uma vida. Restam %2$d.</item>
+    </plurals>
+    <string name="continue_game">Continuar</string>
+    <string name="winner">%1$s ganhou!</string>
+    <string name="survived">Sobreviveu à batata quente.</string>
+    <string name="play_again">Jogar outra vez</string>
+    <string name="paused">Pausa</string>
+    <string name="cooling">A batata está a arrefecer.</string>
+    <string name="back_to_start">Voltar ao início</string>
+</resources>

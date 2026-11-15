@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Fundo escuro igual ao do jogo, para não piscar a branco ao abrir -->
+    <style name="Theme.HotPotato" parent="@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen">
+        <item name="android:windowBackground">@color/surface</item>
+    </style>
+    <color name="surface">#FF18120E</color>
+</resources>

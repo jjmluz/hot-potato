@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Textos em inglês (por omissão). Em values-pt estão os textos em português de Portugal. -->
+<resources>
+    <string name="app_name">Hot Potato</string>
+    <!-- Pasta em assets/ com as perguntas desta língua -->
+    <string name="questions_dir">en</string>
+
+    <string name="brand_title">Hot\nPotato</string>
+    <string name="brand_tagline">A trivia game</string>
+    <string name="intro">Answer correctly to pass the potato. If it explodes in your hands, you lose a life.</string>
+    <string name="players">Players</string>
+    <string name="players_hint">Take turns with the remote</string>
+    <string name="lives">Lives</string>
+    <string name="lives_hint">Per player</string>
+    <string name="start">Start</string>
+    <string name="hint_choose">choose</string>
+    <string name="hint_change">change / avatar</string>
+    <string name="hint_name">edit name</string>
+    <string name="kids">Kids\' questions</string>
+    <string name="kids_hint">Easier questions for everyone</string>
+    <string name="player_n">Player %1$d</string>
+
+    <string name="holder">The potato is with</string>
+    <string name="correct">Correct! Pass the potato to %1$s</string>
+    <string name="wrong">Wrong. The potato stays with you</string>
+
+    <string name="exploded">The potato exploded!</string>
+    <string name="eliminated">%1$s is out of lives and has been eliminated.</string>
+    <plurals name="lost_life">
+        <item quantity="one">%1$s lost a life. %2$d left.</item>
+        <item quantity="other">%1$s lost a life. %2$d left.</item>
+    </plurals>
+    <string name="continue_game">Continue</string>
+    <string name="winner">%1$s wins!</string>
+    <string name="survived">Survived the hot potato.</string>
+    <string name="play_again">Play again</string>
+    <string name="paused">Paused</string>
+    <string name="cooling">The potato is cooling down.</string>
+    <string name="back_to_start">Back to start</string>
+</resources>
