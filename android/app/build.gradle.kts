@@ -11,8 +11,21 @@ android {
         applicationId = "com.jj.hotpotato"
         minSdk = 31
         targetSdk = 36
-        versionCode = 2
-        versionName = "0.2"
+        // O CI passa estes valores nas releases (-PversionCode=… -PversionName=…); localmente ficam os de omissão.
+        versionCode = providers.gradleProperty("versionCode").map(String::toInt).getOrElse(2)
+        versionName = providers.gradleProperty("versionName").getOrElse("0.2")
+    }
+
+    // O CI assina as releases com a keystore dos segredos SIGNING_*. Sem eles (compilações locais),
+    // a release usa a chave de debug, o que chega para instalar por adb.
+    val releaseKeystore = providers.environmentVariable("SIGNING_KEYSTORE").orNull
+    signingConfigs {
+        if (releaseKeystore != null) create("release") {
+            storeFile = file(releaseKeystore)
+            storePassword = providers.environmentVariable("SIGNING_STORE_PASSWORD").get()
+            keyAlias = providers.environmentVariable("SIGNING_KEY_ALIAS").get()
+            keyPassword = providers.environmentVariable("SIGNING_KEY_PASSWORD").get()
+        }
     }
 
     buildTypes {
@@ -20,8 +33,7 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
-            // App pessoal instalada por adb: assina a release com a chave de debug.
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = signingConfigs.findByName("release") ?: signingConfigs.getByName("debug")
         }
     }
     compileOptions {

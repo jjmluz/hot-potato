@@ -55,7 +55,9 @@ Names, avatars and settings are saved on the TV for the next game.
 
 ## Installing
 
-Hot Potato is not on the Play Store. You build it yourself and install it on the TV with `adb`.
+Hot Potato is not on the Play Store. Download the APK from the
+[latest release](https://github.com/jjmluz/hot-potato/releases/latest), or build it yourself, and
+install it on the TV with `adb`.
 
 ### Requirements
 
@@ -70,8 +72,9 @@ cd android && ./gradlew assembleRelease
 ```
 
 The APK ends up in `android/app/build/outputs/apk/release/app-release.apk`. Always use the
-**release** build: Jetpack Compose is much slower in debug builds. The release build is signed with the
-debug key, so it installs directly without setting up a keystore.
+**release** build: Jetpack Compose is much slower in debug builds. Local builds are signed with your
+debug key, so they install without setting up a keystore. Published releases are signed with the
+project's release key, so switching between the two needs an uninstall first.
 
 ### Install on the TV
 
@@ -84,10 +87,10 @@ debug key, so it installs directly without setting up a keystore.
    adb connect <tv-ip-address>:5555
    ```
 
-4. Install the APK:
+4. Install the APK you downloaded or built:
 
    ```bash
-   adb install -r android/app/build/outputs/apk/release/app-release.apk
+   adb install -r hot-potato.apk
    ```
 
 Hot Potato then appears in the TV's list of apps. An Android TV emulator from Android Studio works
@@ -135,3 +138,16 @@ The Google TV home-screen banners are generated from `android/art/banner.html` w
 `android/art/make-banner.sh`.
 
 Code comments are in Portuguese.
+
+## Releases
+
+GitHub Actions checks the question files, lints and builds every push and pull request. Pushing a
+version tag publishes a release with a signed APK:
+
+```bash
+git tag v1.0.0 && git push origin v1.0.0
+```
+
+## License
+
+[MIT](LICENSE)

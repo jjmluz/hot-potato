@@ -1,5 +1,6 @@
 package com.jj.hotpotato
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.KeyEvent
@@ -26,6 +27,8 @@ class MainActivity : ComponentActivity() {
 
     // Todas as teclas do comando passam por aqui; o ecrã não usa o sistema de foco do Android.
     // Com o teclado do sistema aberto, é ele que recebe as teclas, incluindo o Voltar.
+    // O lint marca por engano este método da Activity como interno da biblioteca.
+    @SuppressLint("RestrictedApi")
     override fun dispatchKeyEvent(event: KeyEvent): Boolean {
         val key = keyOf(event.keyCode) ?: return super.dispatchKeyEvent(event)
         val press = event.action == KeyEvent.ACTION_DOWN && event.repeatCount == 0
@@ -40,6 +43,8 @@ class MainActivity : ComponentActivity() {
         return true
     }
 
+    // O Voltar é uma tecla do comando, não um gesto, por isso é tratado aqui como as outras.
+    @SuppressLint("GestureBackNavigation")
     private fun keyOf(code: Int) = when (code) {
         KeyEvent.KEYCODE_DPAD_UP -> Key.UP
         KeyEvent.KEYCODE_DPAD_DOWN -> Key.DOWN

@@ -10,3 +10,6 @@ android/.kotlin/
 # Instruções para agentes de programação, só locais
 AGENTS.md
 CLAUDE.md
+
+*.apk
+*.aab
